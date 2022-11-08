@@ -1,0 +1,16 @@
+name: simple-ci-112
+on: [push]
+
+jobs:
+  test:
+
+    # Specify the type of runner this job will execute within, this will be a GitHub Custom Host runner
+    runs-on: arm-custom-runner-10
+
+    steps:
+      # Get the source code, the command below is an official github action command.
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Hello world
+        run : uname -a
